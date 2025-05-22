@@ -1,5 +1,5 @@
-import * as THREE from 'https://unpkg.com/three@0.152.2/build/three.module.js';
-import { GLTFLoader } from 'https://unpkg.com/three@0.152.2/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.152.2/examples/jsm/loaders/GLTFLoader.js';
 
 let scene, camera, renderer, model;
 
@@ -38,6 +38,7 @@ function init() {
   (error) => {
     console.error('An error happened while loading the model:', error);
   });
+  visible_height = 2 * Math.tan( ( Math.PI / 180 ) * camera.fov / 2 ) * distance_from_camera;
 
   window.addEventListener('resize', onWindowResize);
 }
